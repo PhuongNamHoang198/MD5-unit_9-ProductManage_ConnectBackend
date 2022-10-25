@@ -1,5 +1,5 @@
 import {Component, OnInit} from "@angular/core";
-import {FormGroup} from "@angular/forms";
+import {FormControl, FormGroup} from "@angular/forms";
 import {CategoryService} from "../../service/category.service";
 import {ActivatedRoute, ParamMap} from "@angular/router";
 
