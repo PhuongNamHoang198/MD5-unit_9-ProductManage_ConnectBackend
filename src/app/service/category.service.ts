@@ -20,7 +20,7 @@ export class CategoryService {
     return this.http.get<Category[]>(API_URL + '/categories');
   }
 
-  saveCategory(category): Observable<Category> {
+  saveCategory(category: any): Observable<Category> {
     return this.http.post<Category>(API_URL + '/categories', category);
   }
 

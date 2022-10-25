@@ -9,12 +9,13 @@ import {ActivatedRoute, ParamMap} from "@angular/router";
   styleUrls: ['./category-edit.component.css']
 })
 export class CategoryEditComponent implements OnInit {
-  categoryForm: FormGroup;
-  id: number;
+  categoryForm: FormGroup | undefined;
+  id: number | undefined;
 
   constructor(private categoryService: CategoryService,
               private activatedRoute: ActivatedRoute) {
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
+      // @ts-ignore
       this.id = +paramMap.get('id');
       this.getCategory(this.id);
     });
@@ -32,6 +33,7 @@ export class CategoryEditComponent implements OnInit {
   }
 
   updateCategory(id: number) {
+    // @ts-ignore
     const category = this.categoryForm.value;
     this.categoryService.updateCategory(id, category).subscribe(() => {
       alert('Cập nhật thành công');
